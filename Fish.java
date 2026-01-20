@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Fish{
     private String type;
     private int minTemp;
@@ -15,7 +17,7 @@ public class Fish{
      * Postcondition: minTemp() <= maxTemp()
      */
     public int minTemp(){
-        
+        return minTemp;
     }
 
     /**
@@ -23,7 +25,7 @@ public class Fish{
      * Postcondition: maxTemp() >= minTemp()
      */
     public int maxTemp(){
-        
+        return maxTemp;
     }
 
     /**
@@ -37,13 +39,18 @@ public class Fish{
      * - If the temperature ranges do not overlap, an error message is printed, and the fish is not added to the ArrayList.
      */
     public void addFriend(Fish buddy){
+        if (minTemp <= buddy.maxTemp && maxTemp >= buddy.minTemp) {
+            friends.add(buddy);
+        } else {
+            System.out.println("Error: Temperature ranges do not overlap");
+        }
     }
 
     /**
      * @return true if this fish is compatible with otherFish, false otherwise
      */
     public boolean isCompatible(Fish otherFish){
-        
+        return friends.contains(otherFish) || otherFish.friends.contains(this);
     }
 
     

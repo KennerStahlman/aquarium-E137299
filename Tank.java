@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Tank{
     private ArrayList<Fish> fishies;
     private int temp;
@@ -13,14 +15,14 @@ public class Tank{
      * @return a list of all fish in the tank or an empty list
      */
     public ArrayList<Fish> getFish(){
-        
+        return fishies;
     }
 
     /**
      * @return the temperature of this tank
      */
     public int temp(){
-        
+        return temp;
     }
 
     /**
@@ -28,7 +30,7 @@ public class Tank{
      * @param fishy the fish to add
      */
     public void addFish(Fish fishy){
-        
+        fishies.add(fishy);
     }
 
     // There may be variables, constructors, and methods that are not shown.
